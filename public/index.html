@@ -6,6 +6,11 @@
     <title>Socket.IO chat</title>
   </head>
   <body>
+	  <div>
+		<ul id="messages"></ul>
+		<hr>
+		<input type="text" id="m"> <button onclick="send()">Send</button>
+	  </div>
 	  <script src="/socket.io/socket.io.js"></script>
 	  <script>
 		const socket = io();
@@ -25,10 +30,5 @@
 		socket.on('chat message', receive);
 	  
 	  </script>
-	  <div>
-		<ul id="messages"></ul>
-		<hr>
-		<input type="text" id="m"> <button onclick="send()">Send</button>
-	  </div>
   </body>
 </html>

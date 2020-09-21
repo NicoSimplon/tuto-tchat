@@ -2,7 +2,7 @@ const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-app.get("/", (req, resp) => resp.sendFile(__dirname + '/index.html'));
+app.get("/", (req, resp) => resp.sendFile(`${ __dirname }/public/index.html`));
 
 io.on('connection', (socket) => { 
 
