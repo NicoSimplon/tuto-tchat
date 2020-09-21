@@ -6,29 +6,28 @@
     <title>Socket.IO chat</title>
   </head>
   <body>
-	  <div>
-		<ul id="messages"></ul>
-		<hr>
-		<input type="text" id="m"> <button onclick="send()">Send</button>
-	  </div>
-	  <script src="/socket.io/socket.io.js"></script>
-	  <script>
-		const socket = io();
+    <div>
+      <ul id="messages"></ul>
+      <hr />
+      <input type="text" id="m" /> <button onclick="send()">Send</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
 
-		const send = () => {
-			let text = document.getElementById('m').value;
-			socket.emit('chat message', text);
-			document.getElementById('m').value = '';
-		};
+      const send = () => {
+        let text = document.getElementById("m").value;
+        socket.emit("chat message", text);
+        document.getElementById("m").value = "";
+      };
 
-		const receive = (msg) => {
-			let li = document.createElement('li');
-			li.innerText = msg;
-			document.getElementById('messages').appendChild(li);
-		};
-		
-		socket.on('chat message', receive);
-	  
-	  </script>
+      const receive = (msg) => {
+        let li = document.createElement("li");
+        li.innerText = msg;
+        document.getElementById("messages").appendChild(li);
+      };
+
+      socket.on("chat message", receive);
+    </script>
   </body>
 </html>
