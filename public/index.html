@@ -18,7 +18,7 @@
 		const send = () => {
 			let text = document.getElementById('m').value;
 			socket.emit('chat message', text);
-			
+			document.getElementById('m').value = '';
 		};
 
 		const receive = (msg) => {
